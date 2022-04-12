@@ -37,6 +37,18 @@ class JobTitleFixtures extends Fixture
         $manager->persist($developerFullstack);
         $this->addReference(FixtureEnum::JOB_TITLE_DEVELOPPER_FULL_STACK_REFERENCE,$developerFullstack);
 
+        $cda = new JobTitle();
+        $cda->setLabel('DevOPS: Concepteur Développeur d’Applications');
+        $cda->setIsDefault(false);
+        $manager->persist($cda);
+        $this->addReference(FixtureEnum::JOB_TITLE_CDA_REFERENCE,$cda);
+
+        $developerWeb = new JobTitle();
+        $developerWeb->setLabel('Développeur/Développeuse web');
+        $developerWeb->setIsDefault(false);
+        $manager->persist($developerWeb);
+        $this->addReference(FixtureEnum::JOB_TITLE_DEVELOPPER_WEB_REFERENCE,$developerWeb);
+
         $designer = new JobTitle();
         $designer->setLabel('désigner UX/UI');
         $designer->setIsDefault(true);
@@ -54,6 +66,24 @@ class JobTitleFixtures extends Fixture
         $designerUi->setIsDefault(false);
         $manager->persist($designerUi);
         $this->addReference(FixtureEnum::JOB_TITLE_DESIGNER_UI_REFERENCE,$designerUi);
+
+        $networkAdministrator = new JobTitle();
+        $networkAdministrator->setLabel('Administrateur réseau');
+        $networkAdministrator->setIsDefault(true);
+        $manager->persist($networkAdministrator);
+        $this->addReference(FixtureEnum::JOB_TITLE_NETWORK_ADMINISTRATOR_REFERENCE,$networkAdministrator);
+
+        $databaseAdministrator = new JobTitle();
+        $databaseAdministrator->setLabel('Administrateur de base de données');
+        $databaseAdministrator->setIsDefault(true);
+        $manager->persist($databaseAdministrator);
+        $this->addReference(FixtureEnum::JOB_TITLE_DATABASE_ADMINISTRATOR_REFERENCE,$databaseAdministrator);
+
+        $multimediaAnimator = new JobTitle();
+        $multimediaAnimator->setLabel('Animateur multimédia');
+        $multimediaAnimator->setIsDefault(true);
+        $manager->persist($multimediaAnimator);
+        $this->addReference(FixtureEnum::JOB_TITLE_MULTIMEDIA_ANIMATOR_REFERENCE,$multimediaAnimator);
 
         $manager->flush();
     }

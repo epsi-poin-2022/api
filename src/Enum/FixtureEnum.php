@@ -38,18 +38,28 @@ class FixtureEnum
     public const PICTURE_SUPDEVINCI_REFERENCE = 'picture-supdevinci';
     public const PICTURE_DEVELOPPER_REFERENCE = 'picture-developper';
     public const PICTURE_DESIGNER_REFERENCE = 'picture-designer';
+    public const PICTURE_NETWORK_ADMINISTRATOR_REFERENCE = 'picture-network-administrator';
+    public const PICTURE_DATABASE_ADMINISTRATOR_REFERENCE = 'picture-database-administrator';
+    public const PICTURE_MULTIMEDIA_ANIMATOR_REFERENCE = 'picture-multimedia-animator';
 
     public const JOB_TITLE_DEVELOPPER_REFERENCE = 'job-title-developper';
     public const JOB_TITLE_DEVELOPPER_BACK_END_REFERENCE = 'job-title-developper-back-end';
     public const JOB_TITLE_DEVELOPPER_FRONT_END_REFERENCE = 'job-title-developper-front-end';
     public const JOB_TITLE_DEVELOPPER_FULL_STACK_REFERENCE = 'job-title-developper-full-stack';
-
+    public const JOB_TITLE_CDA_REFERENCE = 'job-title-cda';
+    public const JOB_TITLE_DEVELOPPER_WEB_REFERENCE = 'job-title-developper-web';
     public const JOB_TITLE_DESIGNER_REFERENCE = 'job-title-designer';
     public const JOB_TITLE_DESIGNER_UX_REFERENCE = 'job-title-designer-ux';
     public const JOB_TITLE_DESIGNER_UI_REFERENCE = 'job-title-designer-ui';
+    public const JOB_TITLE_NETWORK_ADMINISTRATOR_REFERENCE = 'job-title-network-administrator';
+    public const JOB_TITLE_DATABASE_ADMINISTRATOR_REFERENCE = 'job-title-database-administrator';
+    public const JOB_TITLE_MULTIMEDIA_ANIMATOR_REFERENCE = 'job-title-multimedia-animator';
 
     public const RESSOURCE_DEVELOPPER_REFERENCE = 'ressource-developper';
-    public const RESSOURCE_DESIGNER_REFERENCE = 'ressource-designer';
-
-
+    public const RESSOURCE_DESIGNER_REFERENCE_MICODE = 'ressource-designer-micode';
+    public const RESSOURCE_DESIGNER_REFERENCE_CIDJ = 'ressource-designer-cidj';
+    public const RESSOURCE_DESIGNER_REFERENCE_WTTJ = 'ressource-designer-wttj';
+    public const RESSOURCE_NETWORK_ADMINISTRATOR_REFERENCE = 'ressource-network-administrator';
+    public const RESSOURCE_DATABASE_ADMINISTRATOR_REFERENCE = 'ressource-database-administrator';
+    public const RESSOURCE_MULTIMEDIA_ANIMATOR_REFERENCE = 'ressource-multimedia-animator';
 }

@@ -81,5 +81,23 @@ class PictureFixtures extends Fixture
         $designer->setFilePath('http://127.0.0.1/uploads/ux-787980_960_720.webp');
         $manager->persist($designer);
         $this->addReference(FixtureEnum::PICTURE_DESIGNER_REFERENCE, $designer);
+
+        $networkAdministrator = new Picture();
+        $networkAdministrator->setFile('Network_administrator.jpg');
+        $networkAdministrator->setFilePath('http://127.0.0.1/uploads/Network_administrator.jpg');
+        $manager->persist($networkAdministrator);
+        $this->addReference(FixtureEnum::PICTURE_NETWORK_ADMINISTRATOR_REFERENCE, $networkAdministrator);
+
+        $databaseAdministrator = new Picture();
+        $databaseAdministrator->setFile('43-9011.00.jpg');
+        $databaseAdministrator->setFilePath('http://127.0.0.1/uploads/43-9011.00.jpg');
+        $manager->persist($databaseAdministrator);
+        $this->addReference(FixtureEnum::PICTURE_DATABASE_ADMINISTRATOR_REFERENCE, $databaseAdministrator);
+
+        $multimediaAnimator = new Picture();
+        $multimediaAnimator->setFile('48575684581_ef351fa4de_b.jpg');
+        $multimediaAnimator->setFilePath('http://127.0.0.1/uploads/48575684581_ef351fa4de_b.jpg');
+        $manager->persist($multimediaAnimator);
+        $this->addReference(FixtureEnum::PICTURE_MULTIMEDIA_ANIMATOR_REFERENCE, $multimediaAnimator);
     }
 }
