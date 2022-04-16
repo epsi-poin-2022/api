@@ -38,10 +38,14 @@ use App\Controller\PictureController;
                     ],
                 ],
             ],
+            'security' => "is_granted('ROLE_ADMIN')",
         ],
     ],
     iri: 'http://schema.org/ImageObject',
-    itemOperations: ['get','delete'],
+    itemOperations: [
+        'get',
+        'delete' => ['security' => "is_granted('ROLE_ADMIN')"]
+    ],
     normalizationContext: ['groups' => ['picture:read']],
 )]
 class Picture

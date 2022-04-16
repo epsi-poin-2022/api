@@ -17,6 +17,16 @@ use Symfony\Component\Validator\Constraints as Assert;
 #[ORM\Entity(repositoryClass: JobDescriptionRepository::class)]
 #[ORM\HasLifecycleCallbacks()]
 #[ApiResource(
+    collectionOperations: [
+        "get",
+        "post" => ["security" => "is_granted('ROLE_ADMIN')"],
+    ],
+    itemOperations: [
+        "get",
+        "put" => ["security" => "is_granted('ROLE_ADMIN')"],
+        "delete" => ["security" => "is_granted('ROLE_ADMIN')"],
+        "patch" => ["security" => "is_granted('ROLE_ADMIN')"],
+    ],
     denormalizationContext: ['groups' => ['job_description:write']],
     normalizationContext: ['groups' => ['job_description:read']],
 )]
