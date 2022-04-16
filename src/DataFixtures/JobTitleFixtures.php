@@ -85,6 +85,36 @@ class JobTitleFixtures extends Fixture
         $manager->persist($multimediaAnimator);
         $this->addReference(FixtureEnum::JOB_TITLE_MULTIMEDIA_ANIMATOR_REFERENCE(),$multimediaAnimator);
 
+        $bigDataArchitect = new JobTitle();
+        $bigDataArchitect->setLabel('Architecte Big Data');
+        $bigDataArchitect->setIsDefault(true);
+        $manager->persist($bigDataArchitect);
+        $this->addReference(FixtureEnum::JOB_TITLE_BIG_DATA_ARCHITECT_REFERENCE(),$bigDataArchitect);
+
+        $projetManager = new JobTitle();
+        $projetManager->setLabel('Chef/fe de projet web');
+        $projetManager->setIsDefault(true);
+        $manager->persist($projetManager);
+        $this->addReference(FixtureEnum::JOB_TITLE_PROJECT_MANAGER_REFERENCE(),$projetManager);
+
+        $communityManager = new JobTitle();
+        $communityManager->setLabel('Community manager');
+        $communityManager->setIsDefault(true);
+        $manager->persist($communityManager);
+        $this->addReference(FixtureEnum::JOB_TITLE_COMMUNITY_MANAGER_REFERENCE(),$communityManager);
+
+        $cyberSecurityConsultant = new JobTitle();
+        $cyberSecurityConsultant->setLabel('Consultant Cyber Sécurité');
+        $cyberSecurityConsultant->setIsDefault(true);
+        $manager->persist($cyberSecurityConsultant);
+        $this->addReference(FixtureEnum::JOB_TITLE_CYBER_SECURITY_CONSULTANT_REFERENCE(),$cyberSecurityConsultant);
+
+        $seoConsultant = new JobTitle();
+        $seoConsultant->setLabel('Consultant SEO');
+        $seoConsultant->setIsDefault(true);
+        $manager->persist($seoConsultant);
+        $this->addReference(FixtureEnum::JOB_TITLE_SEO_CONSULTANT_REFERENCE(),$seoConsultant);
+
         $manager->flush();
     }
 }

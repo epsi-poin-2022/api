@@ -40,11 +40,17 @@ enum FixtureEnum: string
     case PICTURE_ECOLE301_REFERENCE = 'picture-ecole301';
     case PICTURE_EPITECH_REFERENCE = 'picture-epitech';
     case PICTURE_SUPDEVINCI_REFERENCE = 'picture-supdevinci';
+
     case PICTURE_DEVELOPPER_REFERENCE = 'picture-developper';
     case PICTURE_DESIGNER_REFERENCE = 'picture-designer';
     case PICTURE_NETWORK_ADMINISTRATOR_REFERENCE = 'picture-network-administrator';
     case PICTURE_DATABASE_ADMINISTRATOR_REFERENCE = 'picture-database-administrator';
     case PICTURE_MULTIMEDIA_ANIMATOR_REFERENCE = 'picture-multimedia-animator';
+    case PICTURE_BIG_DATA_ARCHITECT_REFERENCE = 'picture-big-data-architect';
+    case PICTURE_PROJECT_MANAGER_REFERENCE = 'picture-project-manager';
+    case PICTURE_COMMUNITY_MANAGER_REFERENCE = 'picture-community-manager';
+    case PICTURE_CYBER_SECURITY_CONSULTANT_REFERENCE = 'picture-cyber-security-consultant';
+    case PICTURE_SEO_CONSULTANT_REFERENCE = 'picture-seo-consultant';
 
     case JOB_TITLE_DEVELOPPER_REFERENCE = 'job-title-developper';
     case JOB_TITLE_DEVELOPPER_BACK_END_REFERENCE = 'job-title-developper-back-end';
@@ -58,6 +64,11 @@ enum FixtureEnum: string
     case JOB_TITLE_NETWORK_ADMINISTRATOR_REFERENCE = 'job-title-network-administrator';
     case JOB_TITLE_DATABASE_ADMINISTRATOR_REFERENCE = 'job-title-database-administrator';
     case JOB_TITLE_MULTIMEDIA_ANIMATOR_REFERENCE = 'job-title-multimedia-animator';
+    case JOB_TITLE_BIG_DATA_ARCHITECT_REFERENCE = 'job-title-big-data-architect';
+    case JOB_TITLE_PROJECT_MANAGER_REFERENCE = 'job-title-project-manager';
+    case JOB_TITLE_COMMUNITY_MANAGER_REFERENCE = 'job-title-community-manager';
+    case JOB_TITLE_CYBER_SECURITY_CONSULTANT_REFERENCE = 'job-title-cyber-security-consultant';
+    case JOB_TITLE_SEO_CONSULTANT_REFERENCE = 'job-title-seo-consultant';
 
     case RESSOURCE_DEVELOPPER_REFERENCE = 'ressource-developper';
     case RESSOURCE_DESIGNER_REFERENCE_MICODE = 'ressource-designer-micode';
@@ -66,5 +77,4 @@ enum FixtureEnum: string
     case RESSOURCE_NETWORK_ADMINISTRATOR_REFERENCE = 'ressource-network-administrator';
     case RESSOURCE_DATABASE_ADMINISTRATOR_REFERENCE = 'ressource-database-administrator';
     case RESSOURCE_MULTIMEDIA_ANIMATOR_REFERENCE = 'ressource-multimedia-animator';
-
 }

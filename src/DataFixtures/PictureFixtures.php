@@ -99,5 +99,35 @@ class PictureFixtures extends Fixture
         $multimediaAnimator->setFilePath('http://127.0.0.1/uploads/48575684581_ef351fa4de_b.jpg');
         $manager->persist($multimediaAnimator);
         $this->addReference(FixtureEnum::PICTURE_MULTIMEDIA_ANIMATOR_REFERENCE(), $multimediaAnimator);
+
+        $bigDataArchitect = new Picture();
+        $bigDataArchitect->setFile('01565f90.jpg');
+        $bigDataArchitect->setFilePath('http://127.0.0.1/uploads/01565f90.jpg');
+        $manager->persist($bigDataArchitect);
+        $this->addReference(FixtureEnum::PICTURE_BIG_DATA_ARCHITECT_REFERENCE(), $bigDataArchitect);
+
+        $projectManager = new Picture();
+        $projectManager->setFile('94506e81.jpg');
+        $projectManager->setFilePath('http://127.0.0.1/uploads/94506e81.jpg');
+        $manager->persist($projectManager);
+        $this->addReference(FixtureEnum::PICTURE_PROJECT_MANAGER_REFERENCE(), $projectManager);
+
+        $communityManager = new Picture();
+        $communityManager->setFile('31794d79.jpg');
+        $communityManager->setFilePath('http://127.0.0.1/uploads/31794d79.jpg');
+        $manager->persist($communityManager);
+        $this->addReference(FixtureEnum::PICTURE_COMMUNITY_MANAGER_REFERENCE(), $communityManager);
+
+        $cyberSecurityConsultant = new Picture();
+        $cyberSecurityConsultant->setFile('023860b2.png');
+        $cyberSecurityConsultant->setFilePath('http://127.0.0.1/uploads/023860b2.png');
+        $manager->persist($cyberSecurityConsultant);
+        $this->addReference(FixtureEnum::PICTURE_CYBER_SECURITY_CONSULTANT_REFERENCE(), $cyberSecurityConsultant);
+
+        $seoConsultant = new Picture();
+        $seoConsultant->setFile('ef14efe6.png');
+        $seoConsultant->setFilePath('http://127.0.0.1/uploads/ef14efe6.png');
+        $manager->persist($seoConsultant);
+        $this->addReference(FixtureEnum::PICTURE_SEO_CONSULTANT_REFERENCE(), $seoConsultant);
     }
 }

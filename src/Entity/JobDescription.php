@@ -65,7 +65,7 @@ class JobDescription
     #[Groups(['job_description:read', 'skill:read'])]
     private ?string $jobSalary;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: 'string', length: 500)]
     #[Assert\NotBlank]
     #[Groups(['job_description:read', 'skill:read'])]
     private string $shortDescription;
