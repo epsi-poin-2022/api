@@ -46,7 +46,7 @@ class OpenApiFactory implements OpenApiFactoryInterface
             ]
         ]);
 
-        $pathItem = new PathItem(
+        $loginPathItem = new PathItem(
             post: new Operation(
                 operationId: 'postApiLogin',
                 tags: ['Auth'],
@@ -74,7 +74,20 @@ class OpenApiFactory implements OpenApiFactoryInterface
             )
         );
 
-        $openApi->getPaths()->addPath('/api/login', $pathItem);
+        $logoutPathItem = new PathItem(
+            post: new Operation(
+                operationId: 'postApiLogout',
+                tags: ['Auth'],
+                requestBody: new RequestBody(
+                    content: new \ArrayObject([
+                        'application/json' => []
+                    ])
+                )
+            )
+        );
+
+        $openApi->getPaths()->addPath('/api/login', $loginPathItem);
+        $openApi->getPaths()->addPath('/api/logout', $logoutPathItem);
 
         return $openApi;
     }
