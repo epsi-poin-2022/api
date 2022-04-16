@@ -45,7 +45,12 @@ use App\Controller\PictureController;
     iri: 'http://schema.org/ImageObject',
     itemOperations: [
         'get',
-        'delete' => ['security' => "is_granted('ROLE_ADMIN')"]
+        'delete' => [
+            'security' => "is_granted('ROLE_ADMIN')",
+            'openapi_context' => [
+                'security' => [['cookieAuth' => []]],
+            ],
+        ]
     ],
     normalizationContext: ['groups' => ['picture:read']],
 )]
