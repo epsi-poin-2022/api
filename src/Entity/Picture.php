@@ -37,6 +37,7 @@ use App\Controller\PictureController;
                         ],
                     ],
                 ],
+                'security' => [['cookieAuth' => []]],
             ],
             'security' => "is_granted('ROLE_ADMIN')",
         ],

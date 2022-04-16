@@ -14,13 +14,33 @@ use Symfony\Component\Validator\Constraints as Assert;
 #[ApiResource(
     collectionOperations: [
         "get",
-        "post" => ["security" => "is_granted('ROLE_ADMIN')"],
+        "post" => [
+            "security" => "is_granted('ROLE_ADMIN')",
+            'openapi_context' => [
+                'security' => [['cookieAuth' => []]],
+            ],
+        ],
     ],
     itemOperations: [
         "get",
-        "put" => ["security" => "is_granted('ROLE_ADMIN')"],
-        "delete" => ["security" => "is_granted('ROLE_ADMIN')"],
-        "patch" => ["security" => "is_granted('ROLE_ADMIN')"],
+        "put" => [
+            "security" => "is_granted('ROLE_ADMIN')",
+            'openapi_context' => [
+                'security' => [['cookieAuth' => []]],
+            ],
+        ],
+        "delete" => [
+            "security" => "is_granted('ROLE_ADMIN')",
+            'openapi_context' => [
+                'security' => [['cookieAuth' => []]],
+            ],
+        ],
+        "patch" => [
+            "security" => "is_granted('ROLE_ADMIN')",
+            'openapi_context' => [
+                'security' => [['cookieAuth' => []]],
+            ],
+        ],
     ],
     denormalizationContext: ['groups' => ['job_title:write']],
     normalizationContext: ['groups' => ['job_title:read']],

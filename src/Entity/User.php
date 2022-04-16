@@ -21,7 +21,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
             'controller' => MeController::class,
             'read' => false,
             'openapi_context' => [
-                'security' => ['cookieAuth' => []],
+                'security' => [['cookieAuth' => []]],
             ],
         ]
     ],
