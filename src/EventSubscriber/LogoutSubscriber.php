@@ -15,6 +15,9 @@ class LogoutSubscriber implements EventSubscriberInterface
         $event->setResponse(new JsonResponse(null, Response::HTTP_NO_CONTENT));
     }
 
+    /**
+     * @return string[]
+     */
     public static function getSubscribedEvents()
     {
         return [
