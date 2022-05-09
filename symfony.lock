@@ -1,4 +1,18 @@
 {
+    "api-platform/admin-meta": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "1.0",
+            "ref": "41f4cc7bc6c8f415100a58e1ec6c76605cdd65d3"
+        },
+        "files": [
+            "assets/js/admin.js",
+            "config/routes/api_platform_admin.yaml",
+            "templates/admin.html.twig"
+        ]
+    },
     "api-platform/core": {
         "version": "2.6",
         "recipe": {
@@ -509,6 +523,25 @@
     },
     "symfony/web-link": {
         "version": "v6.0.3"
+    },
+    "symfony/webpack-encore-bundle": {
+        "version": "1.14",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "1.10",
+            "ref": "2858aeed7e1d81a45365c049eb533cc8827e380b"
+        },
+        "files": [
+            "assets/app.js",
+            "assets/bootstrap.js",
+            "assets/controllers.json",
+            "assets/controllers/hello_controller.js",
+            "assets/styles/app.css",
+            "config/packages/webpack_encore.yaml",
+            "package.json",
+            "webpack.config.js"
+        ]
     },
     "symfony/yaml": {
         "version": "v6.0.3"
