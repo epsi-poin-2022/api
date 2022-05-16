@@ -48,7 +48,7 @@ class SchoolFixtures extends Fixture implements DependentFixtureInterface
         $this->addReference(FixtureEnum::SCHOOL_DIGITALCAMPUS_REFERENCE(), $digitalCampus);
 
         $eni = new School();
-        $eni->setName('digital campus');
+        $eni->setName('eni');
         $eni->setWebsite('https://www.eni.fr/');
         $eni->setLogo($this->getReference(FixtureEnum::PICTURE_ENI_REFERENCE()));
         $manager->persist($eni);

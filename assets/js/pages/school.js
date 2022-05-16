@@ -8,8 +8,6 @@ export const SchoolList = props => (
     <ListGuesser {...props}>
         <FieldGuesser source={"id"} />
         <FieldGuesser source={"name"} />
-        <FieldGuesser source={"website"} />
-        <FieldGuesser source={"logo"} />
     </ListGuesser>
 );
 

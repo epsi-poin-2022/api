@@ -19,6 +19,8 @@
         "@api-platform/admin": "^3.1.1",
         "@babel/preset-react": "^7.16.7",
         "@mui/icons-material": "^5.6.2",
-        "node-polyfill-webpack-plugin": "^1.1.4"
+        "node-polyfill-webpack-plugin": "^1.1.4",
+        "ra-input-rich-text": "^4.0.3",
+        "react-admin": "^4.0.3"
     }
 }

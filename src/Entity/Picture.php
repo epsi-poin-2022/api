@@ -59,7 +59,7 @@ class Picture
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
-    #[Groups('picture: read')]
+    #[Groups('picture:read')]
     private ?int $id = null;
 
     #[ORM\Column(type: 'string', nullable: false)]
