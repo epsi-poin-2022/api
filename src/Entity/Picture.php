@@ -111,4 +111,9 @@ class Picture
     {
         $this->filePath = $filePath;
     }
+
+    public function __toString(): string
+    {
+        return $this->file;
+    }
 }

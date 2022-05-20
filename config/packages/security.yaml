@@ -17,13 +17,25 @@ security:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
-        main:
+        api:
             lazy: true
             provider: app_user_provider
+            pattern: ^/api
             json_login:
                 check_path: api_login
             logout:
                 path: api_logout
+        app:
+            lazy: true
+            provider: app_user_provider
+            pattern: ^/app
+            form_login:
+                login_path: app_login
+                check_path: app_login
+            logout:
+                path: app_logout
+            custom_authenticator: App\Security\LoginFormAuthenticator
+            entry_point: form_login
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
@@ -34,8 +46,9 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/profile, roles: ROLE_USER }
+         - { path: ^/app/admin, roles: ROLE_ADMIN }
+         - { path: ^/app/login, roles: PUBLIC_ACCESS }
+         - { path: ^/api, roles: PUBLIC_ACCESS }
 
 when@test:
     security:
