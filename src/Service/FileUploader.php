@@ -15,25 +15,25 @@ use Symfony\Component\String\Slugger\SluggerInterface;
  */
 class FileUploader
 {
-    private string $uploadPath;
+    private string $uploadsPath;
     private SluggerInterface $slugger;
     private UrlHelper $urlHelper;
     private string $relativeUploadsDir;
 
     /**
-     * @param                  $publicPath
-     * @param                  $uploadPath
+     * @param string           $publicPath
+     * @param string           $uploadsPath
      * @param SluggerInterface $slugger
      * @param UrlHelper        $urlHelper
      */
-    public function __construct($publicPath, $uploadPath, SluggerInterface $slugger, UrlHelper $urlHelper)
+    public function __construct(string $publicPath, string $uploadsPath, SluggerInterface $slugger, UrlHelper $urlHelper)
     {
-        $this->uploadPath = $uploadPath;
+        $this->uploadsPath = $uploadsPath;
         $this->slugger = $slugger;
         $this->urlHelper = $urlHelper;
 
         // get uploads directory relative to public path //  "/uploads/"
-        $this->relativeUploadsDir = str_replace($publicPath, '', $this->uploadPath).'/';
+        $this->relativeUploadsDir = str_replace($publicPath, '', $this->uploadsPath).'/';
     }
 
     /**
@@ -49,7 +49,7 @@ class FileUploader
         $fileName = $safeFilename.'-'.uniqid().'.'.$file->guessExtension();
 
         try {
-            $file->move($this->getUploadPath(), $fileName);
+            $file->move($this->getUploadsPath(), $fileName);
         } catch (FileException $e) {
             $errorMessage = "Le fichier (${originalFilename}) n’a pas pu être téléversé";
             throw new Exception($errorMessage);
@@ -61,9 +61,9 @@ class FileUploader
     /**
      * @return string
      */
-    public function getUploadPath(): string
+    public function getUploadsPath(): string
     {
-        return $this->uploadPath;
+        return $this->uploadsPath;
     }
 
     /**

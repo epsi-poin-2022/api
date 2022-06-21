@@ -31,6 +31,6 @@ class PictureListener
             return;
         }
 
-        unlink($this->fileUploader->getUploadPath().'/'.$entity->getFile());
+        unlink($this->fileUploader->getUploadsPath().'/'.$entity->getFile());
     }
 }
