@@ -18,7 +18,7 @@ class PictureFixtures extends Fixture
      */
     public function load(ObjectManager $manager, ): void
     {
-        dd($_SERVER['HTTP_REFERER']);
+        dd($_SERVER);
 
         $epsi = new Picture();
         $epsi->setFile('epsi.png');
