@@ -4,12 +4,13 @@ namespace App\DataFixtures;
 
 use App\Entity\Picture;
 use App\Enum\FixtureEnum;
+use App\Service\FileUploader;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
 class PictureFixtures extends Fixture
 {
-    public function __construct(private string $uploadsPath) {}
+    public function __construct(private FileUploader $fileUploader, private string $uploadsPath) {}
 
     /**
      * @param ObjectManager $manager
@@ -18,11 +19,9 @@ class PictureFixtures extends Fixture
      */
     public function load(ObjectManager $manager, ): void
     {
-        dd($_SERVER);
-
         $epsi = new Picture();
         $epsi->setFile('epsi.png');
-        $epsi->setFilePath($this->uploadsPath.'/epsi.png');
+        $epsi->setFilePath($this->fileUploader->getUrl($this->uploadsPath.'/epsi.png'));
         $manager->persist($epsi);
         $this->addReference(FixtureEnum::PICTURE_EPSI_REFERENCE(), $epsi);
 
