@@ -18,6 +18,7 @@ class PictureFixtures extends Fixture
      */
     public function load(ObjectManager $manager, ): void
     {
+        dd($this->uploadsPath);
         $epsi = new Picture();
         $epsi->setFile('epsi.png');
         $epsi->setFilePath($this->uploadsPath.'/epsi.png');
