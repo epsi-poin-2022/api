@@ -7,9 +7,10 @@ namespace App\DataFixtures;
 use App\Entity\Skill;
 use App\Enum\FixtureEnum;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Bundle\FixturesBundle\FixtureGroupInterface;
 use Doctrine\Persistence\ObjectManager;
 
-class SkillFixtures extends Fixture
+class SkillFixtures extends Fixture implements FixtureGroupInterface
 {
     /**
      * @param ObjectManager $manager
@@ -79,5 +80,10 @@ class SkillFixtures extends Fixture
         $this->addReference(FixtureEnum::SKILL_MARKETING_REFERENCE(), $marketing);
 
         $manager->flush();
+    }
+
+    public static function getGroups(): array
+    {
+        return ['dev', 'prod'];
     }
 }

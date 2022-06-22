@@ -5,9 +5,10 @@ namespace App\DataFixtures;
 use App\Entity\User;
 use App\Enum\RoleEnum;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Bundle\FixturesBundle\FixtureGroupInterface;
 use Doctrine\Persistence\ObjectManager;
 
-class UserFixtures extends Fixture
+class UserFixtures extends Fixture implements FixtureGroupInterface
 {
     public function load(ObjectManager $manager): void
     {
@@ -30,5 +31,10 @@ class UserFixtures extends Fixture
         $manager->persist($erwann);
 
         $manager->flush();
+    }
+
+    public static function getGroups(): array
+    {
+        return ['dev', 'prod'];
     }
 }

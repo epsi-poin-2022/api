@@ -7,10 +7,11 @@ namespace App\DataFixtures;
 use App\Entity\JobDescription;
 use App\Enum\FixtureEnum;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Bundle\FixturesBundle\FixtureGroupInterface;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
 
-class JobDescriptionFixtures extends Fixture implements DependentFixtureInterface
+class JobDescriptionFixtures extends Fixture implements DependentFixtureInterface, FixtureGroupInterface
 {
     /**
      * @param ObjectManager $manager
@@ -171,7 +172,12 @@ class JobDescriptionFixtures extends Fixture implements DependentFixtureInterfac
             SkillFixtures::class,
             JobTitleFixtures::class,
             RessourceFixtures::class,
-            PictureFixtures::class,
+            PictureDevFixtures::class,
         ];
+    }
+
+    public static function getGroups(): array
+    {
+        return ['dev', 'prod'];
     }
 }

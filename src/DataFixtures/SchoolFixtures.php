@@ -7,10 +7,11 @@ namespace App\DataFixtures;
 use App\Entity\School;
 use App\Enum\FixtureEnum;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Bundle\FixturesBundle\FixtureGroupInterface;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
 
-class SchoolFixtures extends Fixture implements DependentFixtureInterface
+class SchoolFixtures extends Fixture implements DependentFixtureInterface, FixtureGroupInterface
 {
     /**
      * @param ObjectManager $manager
@@ -88,7 +89,12 @@ class SchoolFixtures extends Fixture implements DependentFixtureInterface
     public function getDependencies()
     {
         return [
-            PictureFixtures::class,
+            PictureDevFixtures::class,
         ];
+    }
+
+    public static function getGroups(): array
+    {
+        return ['dev', 'prod'];
     }
 }
