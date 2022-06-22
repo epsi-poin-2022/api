@@ -8,7 +8,7 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Bundle\FixturesBundle\FixtureGroupInterface;
 use Doctrine\Persistence\ObjectManager;
 
-class PictureProdFixtures extends Fixture implements FixtureGroupInterface
+class PictureFixtures extends Fixture implements FixtureGroupInterface
 {
     /**
      * @param ObjectManager $manager
@@ -17,7 +17,7 @@ class PictureProdFixtures extends Fixture implements FixtureGroupInterface
      */
     public function load(ObjectManager $manager, ): void
     {
-        $UPLOADS_URL = 'https://api-poin-2223.duclos.xyz/uploads/';
+        $UPLOADS_URL = $_ENV['UPLOADS_URL'];
 
         $epsi = new Picture();
         $epsi->setFile('epsi.png');
@@ -136,6 +136,6 @@ class PictureProdFixtures extends Fixture implements FixtureGroupInterface
 
     public static function getGroups(): array
     {
-        return ['prod'];
+        return ['dev', 'prod'];
     }
 }
