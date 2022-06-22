@@ -7,10 +7,9 @@ namespace App\DataFixtures;
 use App\Entity\Ressource;
 use App\Enum\FixtureEnum;
 use Doctrine\Bundle\FixturesBundle\Fixture;
-use Doctrine\Bundle\FixturesBundle\FixtureGroupInterface;
 use Doctrine\Persistence\ObjectManager;
 
-class RessourceFixtures extends Fixture implements FixtureGroupInterface
+class RessourceFixtures extends Fixture
 {
     /**
      * @param ObjectManager $manager
@@ -62,10 +61,5 @@ class RessourceFixtures extends Fixture implements FixtureGroupInterface
         $this->addReference(FixtureEnum::RESSOURCE_MULTIMEDIA_ANIMATOR_REFERENCE(), $multimediaAnimator);
 
         $manager->flush();
-    }
-
-    public static function getGroups(): array
-    {
-        return ['dev', 'prod'];
     }
 }

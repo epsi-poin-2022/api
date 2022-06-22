@@ -7,10 +7,9 @@ namespace App\DataFixtures;
 use App\Entity\JobTitle;
 use App\Enum\FixtureEnum;
 use Doctrine\Bundle\FixturesBundle\Fixture;
-use Doctrine\Bundle\FixturesBundle\FixtureGroupInterface;
 use Doctrine\Persistence\ObjectManager;
 
-class JobTitleFixtures extends Fixture implements FixtureGroupInterface
+class JobTitleFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
@@ -117,10 +116,5 @@ class JobTitleFixtures extends Fixture implements FixtureGroupInterface
         $this->addReference(FixtureEnum::JOB_TITLE_SEO_CONSULTANT_REFERENCE(),$seoConsultant);
 
         $manager->flush();
-    }
-
-    public static function getGroups(): array
-    {
-        return ['dev', 'prod'];
     }
 }

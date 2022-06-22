@@ -5,10 +5,9 @@ namespace App\DataFixtures;
 use App\Entity\Picture;
 use App\Enum\FixtureEnum;
 use Doctrine\Bundle\FixturesBundle\Fixture;
-use Doctrine\Bundle\FixturesBundle\FixtureGroupInterface;
 use Doctrine\Persistence\ObjectManager;
 
-class PictureFixtures extends Fixture implements FixtureGroupInterface
+class PictureFixtures extends Fixture
 {
     /**
      * @param ObjectManager $manager
@@ -132,10 +131,5 @@ class PictureFixtures extends Fixture implements FixtureGroupInterface
         $seoConsultant->setFilePath($UPLOADS_URL.'ef14efe6.png');
         $manager->persist($seoConsultant);
         $this->addReference(FixtureEnum::PICTURE_SEO_CONSULTANT_REFERENCE(), $seoConsultant);
-    }
-
-    public static function getGroups(): array
-    {
-        return ['dev', 'prod'];
     }
 }
