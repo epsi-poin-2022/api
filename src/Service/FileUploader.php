@@ -7,7 +7,6 @@ namespace App\Service;
 use Exception;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
-use Symfony\Component\HttpFoundation\UrlHelper;
 use Symfony\Component\String\Slugger\SluggerInterface;
 
 /**
@@ -17,23 +16,15 @@ class FileUploader
 {
     private string $uploadsPath;
     private SluggerInterface $slugger;
-    private UrlHelper $urlHelper;
-    private string $relativeUploadsDir;
 
     /**
-     * @param string           $publicPath
      * @param string           $uploadsPath
      * @param SluggerInterface $slugger
-     * @param UrlHelper        $urlHelper
      */
-    public function __construct(string $publicPath, string $uploadsPath, SluggerInterface $slugger, UrlHelper $urlHelper)
+    public function __construct(string $uploadsPath, SluggerInterface $slugger)
     {
         $this->uploadsPath = $uploadsPath;
         $this->slugger = $slugger;
-        $this->urlHelper = $urlHelper;
-
-        // get uploads directory relative to public path //  "/uploads/"
-        $this->relativeUploadsDir = str_replace($publicPath, '', $this->uploadsPath).'/';
     }
 
     /**
@@ -68,20 +59,15 @@ class FileUploader
 
     /**
      * @param string|null $fileName
-     * @param bool        $absolute
      *
      * @return string|null
      */
-    public function getUrl(?string $fileName, bool $absolute = true): ?string
+    public function getUrl(?string $fileName): ?string
     {
         if (empty($fileName)) {
             return null;
         }
 
-        if ($absolute) {
-            return $this->urlHelper->getAbsoluteUrl($this->relativeUploadsDir.$fileName);
-        }
-
-        return $this->urlHelper->getRelativePath($this->relativeUploadsDir.$fileName);
+        return $_ENV['UPLOADS_URL'].$fileName;
     }
 }
