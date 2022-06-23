@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Welcome!{% endblock %}
+
+{% block body %}
+    <main>
+        <h1>Digital Job API</h1>
+        <a href="{{ path('api_entrypoint') }}" class="btn btn-primary btn-lg">Go to API interface</a>
+        <a href="{{ path('app_login') }}" class="btn btn-primary btn-lg">Go to admin interface</a>
+    </main>
+{% endblock %}

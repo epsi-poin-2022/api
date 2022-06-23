@@ -4,7 +4,7 @@ api_platform:
     title: 'DIGITAL-JOBS-API'
 
     # The version of the API.
-    version: '0.2.0'
+    version: '1.0.0'
 
     # The description of the API.
     description: 'API for the presentation of digital professions'
